@@ -23527,3 +23527,532 @@ airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOper
 **kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
 [2022-06-07 14:19:52,310] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
 [2022-06-07 14:19:52,608] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.701 seconds
+[2022-06-07 14:20:22,677] {processor.py:153} INFO - Started process (PID=82733) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:20:22,680] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:20:22,683] {logging_mixin.py:115} INFO - [2022-06-07 14:20:22,682] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:20:22,765] {logging_mixin.py:115} INFO - [2022-06-07 14:20:22,763] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:20:22,767] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:20:22,871] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.200 seconds
+[2022-06-07 14:20:53,589] {processor.py:153} INFO - Started process (PID=82799) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:20:53,591] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:20:53,593] {logging_mixin.py:115} INFO - [2022-06-07 14:20:53,593] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:20:53,689] {logging_mixin.py:115} INFO - [2022-06-07 14:20:53,687] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:20:53,695] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:20:53,806] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.221 seconds
+[2022-06-07 14:21:23,900] {processor.py:153} INFO - Started process (PID=82854) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:21:23,901] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:21:23,903] {logging_mixin.py:115} INFO - [2022-06-07 14:21:23,903] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:21:24,004] {logging_mixin.py:115} INFO - [2022-06-07 14:21:23,999] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:21:24,009] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:21:24,162] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.267 seconds
+[2022-06-07 14:21:54,422] {processor.py:153} INFO - Started process (PID=82923) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:21:54,423] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:21:54,425] {logging_mixin.py:115} INFO - [2022-06-07 14:21:54,425] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:21:54,534] {logging_mixin.py:115} INFO - [2022-06-07 14:21:54,531] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:21:54,536] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:21:54,717] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.301 seconds
+[2022-06-07 14:22:24,970] {processor.py:153} INFO - Started process (PID=82989) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:22:24,979] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:22:24,984] {logging_mixin.py:115} INFO - [2022-06-07 14:22:24,983] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:22:25,145] {logging_mixin.py:115} INFO - [2022-06-07 14:22:25,141] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:22:25,147] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:22:25,355] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.399 seconds
+[2022-06-07 14:22:56,169] {processor.py:153} INFO - Started process (PID=83057) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:22:56,170] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:22:56,171] {logging_mixin.py:115} INFO - [2022-06-07 14:22:56,171] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:22:56,250] {logging_mixin.py:115} INFO - [2022-06-07 14:22:56,248] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:22:56,251] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:22:56,354] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.189 seconds
+[2022-06-07 14:23:26,435] {processor.py:153} INFO - Started process (PID=83114) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:23:26,438] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:23:26,439] {logging_mixin.py:115} INFO - [2022-06-07 14:23:26,439] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:23:26,559] {logging_mixin.py:115} INFO - [2022-06-07 14:23:26,557] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:23:26,561] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:23:26,684] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.260 seconds
+[2022-06-07 14:23:57,526] {processor.py:153} INFO - Started process (PID=83183) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:23:57,529] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:23:57,530] {logging_mixin.py:115} INFO - [2022-06-07 14:23:57,530] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:23:57,675] {logging_mixin.py:115} INFO - [2022-06-07 14:23:57,662] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:23:57,689] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:23:57,958] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.442 seconds
+[2022-06-07 14:24:28,437] {processor.py:153} INFO - Started process (PID=83253) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:24:28,442] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:24:28,446] {logging_mixin.py:115} INFO - [2022-06-07 14:24:28,445] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:24:28,569] {logging_mixin.py:115} INFO - [2022-06-07 14:24:28,566] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:24:28,571] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:24:28,697] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.271 seconds
+[2022-06-07 14:24:58,975] {processor.py:153} INFO - Started process (PID=83314) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:24:58,978] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:24:58,980] {logging_mixin.py:115} INFO - [2022-06-07 14:24:58,980] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:24:59,068] {logging_mixin.py:115} INFO - [2022-06-07 14:24:59,066] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:24:59,070] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:24:59,222] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.256 seconds
+[2022-06-07 14:25:29,350] {processor.py:153} INFO - Started process (PID=83381) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:25:29,353] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:25:29,355] {logging_mixin.py:115} INFO - [2022-06-07 14:25:29,355] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:25:29,472] {logging_mixin.py:115} INFO - [2022-06-07 14:25:29,469] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:25:29,474] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:25:29,580] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.239 seconds
+[2022-06-07 14:25:59,864] {processor.py:153} INFO - Started process (PID=83452) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:25:59,868] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:25:59,870] {logging_mixin.py:115} INFO - [2022-06-07 14:25:59,870] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:26:00,062] {logging_mixin.py:115} INFO - [2022-06-07 14:26:00,051] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:26:00,072] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:26:00,334] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.491 seconds
+[2022-06-07 14:26:30,749] {processor.py:153} INFO - Started process (PID=83511) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:26:30,753] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:26:30,755] {logging_mixin.py:115} INFO - [2022-06-07 14:26:30,755] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:26:30,901] {logging_mixin.py:115} INFO - [2022-06-07 14:26:30,897] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:26:30,905] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:26:31,036] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.292 seconds
+[2022-06-07 14:27:01,423] {processor.py:153} INFO - Started process (PID=83577) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:27:01,426] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:27:01,428] {logging_mixin.py:115} INFO - [2022-06-07 14:27:01,428] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:27:01,541] {logging_mixin.py:115} INFO - [2022-06-07 14:27:01,538] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:27:01,543] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:27:01,674] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.262 seconds
+[2022-06-07 14:27:31,808] {processor.py:153} INFO - Started process (PID=83637) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:27:31,811] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:27:31,813] {logging_mixin.py:115} INFO - [2022-06-07 14:27:31,813] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:27:31,906] {logging_mixin.py:115} INFO - [2022-06-07 14:27:31,903] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:27:31,908] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:27:32,011] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.211 seconds
+[2022-06-07 14:28:02,275] {processor.py:153} INFO - Started process (PID=83704) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:28:02,277] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:28:02,279] {logging_mixin.py:115} INFO - [2022-06-07 14:28:02,279] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:28:02,407] {logging_mixin.py:115} INFO - [2022-06-07 14:28:02,404] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:28:02,408] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:28:02,560] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.294 seconds
+[2022-06-07 14:28:33,167] {processor.py:153} INFO - Started process (PID=83772) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:28:33,168] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:28:33,169] {logging_mixin.py:115} INFO - [2022-06-07 14:28:33,169] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:28:33,232] {logging_mixin.py:115} INFO - [2022-06-07 14:28:33,230] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:28:33,234] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:28:33,330] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.166 seconds
+[2022-06-07 14:29:04,042] {processor.py:153} INFO - Started process (PID=83831) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:29:04,044] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:29:04,046] {logging_mixin.py:115} INFO - [2022-06-07 14:29:04,046] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:29:04,127] {logging_mixin.py:115} INFO - [2022-06-07 14:29:04,125] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:29:04,129] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:29:04,232] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.193 seconds
+[2022-06-07 14:29:34,310] {processor.py:153} INFO - Started process (PID=83897) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:29:34,312] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:29:34,313] {logging_mixin.py:115} INFO - [2022-06-07 14:29:34,313] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:29:34,382] {logging_mixin.py:115} INFO - [2022-06-07 14:29:34,379] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:29:34,384] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:29:34,482] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.176 seconds
+[2022-06-07 14:30:04,859] {processor.py:153} INFO - Started process (PID=83964) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:30:04,862] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:30:04,863] {logging_mixin.py:115} INFO - [2022-06-07 14:30:04,863] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:30:04,948] {logging_mixin.py:115} INFO - [2022-06-07 14:30:04,945] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:30:04,950] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:30:05,065] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.210 seconds
+[2022-06-07 14:30:35,226] {processor.py:153} INFO - Started process (PID=84022) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:30:35,230] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:30:35,234] {logging_mixin.py:115} INFO - [2022-06-07 14:30:35,234] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:30:35,352] {logging_mixin.py:115} INFO - [2022-06-07 14:30:35,349] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:30:35,353] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:30:35,463] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.246 seconds
+[2022-06-07 14:31:05,871] {processor.py:153} INFO - Started process (PID=84087) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:31:05,876] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:31:05,882] {logging_mixin.py:115} INFO - [2022-06-07 14:31:05,882] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:31:06,491] {logging_mixin.py:115} INFO - [2022-06-07 14:31:06,482] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:31:06,496] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:31:06,907] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 1.067 seconds
+[2022-06-07 14:31:37,244] {processor.py:153} INFO - Started process (PID=84142) to work on /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:31:37,247] {processor.py:641} INFO - Processing file /opt/airflow/dags/spark_consumer_DAG.py for tasks to queue
+[2022-06-07 14:31:37,249] {logging_mixin.py:115} INFO - [2022-06-07 14:31:37,249] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:31:37,404] {logging_mixin.py:115} INFO - [2022-06-07 14:31:37,400] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/spark_consumer_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spark_consumer_DAG.py", line 51, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: pyspark_consumer). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:31:37,406] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/spark_consumer_DAG.py
+[2022-06-07 14:31:37,570] {processor.py:161} INFO - Processing /opt/airflow/dags/spark_consumer_DAG.py took 0.331 seconds

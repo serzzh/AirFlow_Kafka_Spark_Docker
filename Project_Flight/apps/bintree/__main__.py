@@ -6,7 +6,7 @@ rule = {
     'n_features_in_': 3,
     'feature_names': ['Cu50', 'pulp_level', 'bulb_torn'],
     'n_classes_': 11,
-    'classes_': np.array([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]),
+    'classes_': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     'node_count': 21,
     'tree_': {
         'node_count': 21,
@@ -17,6 +17,11 @@ rule = {
         'class': [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     }
 }
+
+with open("my.json", "w") as f:
+    json.dump(rule, f)
+
+rule["classes_"] = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 def dataset_generate(tree, n_features_in_, n_classes_):
     X = dict()
