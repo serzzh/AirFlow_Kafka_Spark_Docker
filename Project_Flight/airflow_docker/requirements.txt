@@ -1,5 +1,5 @@
-kafka-python==1.4.6
-psycopg2-binary==2.7.7
-matplotlib==3.0.3
-pyspark==2.4.4
+kafka-python==2.0.2
+psycopg2-binary==2.9.3
+matplotlib==3.5.2
+pyspark==3.2.1
 docker==4.0.2

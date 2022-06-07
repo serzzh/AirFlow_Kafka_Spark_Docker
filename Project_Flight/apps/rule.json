@@ -1,0 +1,9 @@
+{
+    "n_features_in_": 2,
+    "feature_names": [
+        "Cu50",
+        "pulp_level",
+        "bulb_torn"
+    ],
+    "n_classes_": 11,
+    "classes_": 
