@@ -23458,3 +23458,72 @@ airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOper
 **kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
 [2022-06-07 14:18:19,547] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/flights_insight_DAG.py
 [2022-06-07 14:18:19,642] {processor.py:161} INFO - Processing /opt/airflow/dags/flights_insight_DAG.py took 0.172 seconds
+[2022-06-07 14:18:49,885] {processor.py:153} INFO - Started process (PID=82534) to work on /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:18:49,893] {processor.py:641} INFO - Processing file /opt/airflow/dags/flights_insight_DAG.py for tasks to queue
+[2022-06-07 14:18:49,896] {logging_mixin.py:115} INFO - [2022-06-07 14:18:49,895] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:18:50,087] {logging_mixin.py:115} INFO - [2022-06-07 14:18:50,078] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/flights_insight_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/flights_insight_DAG.py", line 38, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: data_insight). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:18:50,090] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:18:50,290] {processor.py:161} INFO - Processing /opt/airflow/dags/flights_insight_DAG.py took 0.420 seconds
+[2022-06-07 14:19:20,969] {processor.py:153} INFO - Started process (PID=82603) to work on /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:19:20,978] {processor.py:641} INFO - Processing file /opt/airflow/dags/flights_insight_DAG.py for tasks to queue
+[2022-06-07 14:19:20,981] {logging_mixin.py:115} INFO - [2022-06-07 14:19:20,981] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:19:21,150] {logging_mixin.py:115} INFO - [2022-06-07 14:19:21,143] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/flights_insight_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/flights_insight_DAG.py", line 38, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: data_insight). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:19:21,154] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:19:21,340] {processor.py:161} INFO - Processing /opt/airflow/dags/flights_insight_DAG.py took 0.379 seconds
+[2022-06-07 14:19:51,930] {processor.py:153} INFO - Started process (PID=82659) to work on /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:19:51,935] {processor.py:641} INFO - Processing file /opt/airflow/dags/flights_insight_DAG.py for tasks to queue
+[2022-06-07 14:19:51,940] {logging_mixin.py:115} INFO - [2022-06-07 14:19:51,939] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:19:52,298] {logging_mixin.py:115} INFO - [2022-06-07 14:19:52,289] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/flights_insight_DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/flights_insight_DAG.py", line 38, in <module>
+    dag=dag,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 190, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 390, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 744, in __init__
+    f"Invalid arguments were passed to {self.__class__.__name__} (task_id: {task_id}). "
+airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOperator (task_id: data_insight). Invalid arguments were:
+**kwargs: {'volumes': ['/usr/local/airflow/dags/src/spark_consume_data:/spark_consume_data']}
+[2022-06-07 14:19:52,301] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/flights_insight_DAG.py
+[2022-06-07 14:19:52,621] {processor.py:161} INFO - Processing /opt/airflow/dags/flights_insight_DAG.py took 0.705 seconds
