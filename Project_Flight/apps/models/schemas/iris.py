@@ -3,10 +3,8 @@ from typing import List, Any
 
 
 class Iris(BaseModel):
-    data: List[conlist(float, min_items=4, max_items=4)]
+    data: List[conlist(float, min_items=3, max_items=3)]
 
 
 class IrisPredictionResponse(BaseModel):
-    prediction: List[int]
-    probability: List[Any]
-    log_probability: List[Any]
+    prediction: int

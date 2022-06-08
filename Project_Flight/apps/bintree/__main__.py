@@ -21,15 +21,15 @@ jsonstring = json.loads('''
 ''')
 
 rule = Rule.from_dict(jsonstring)
-clf = rule.build_tree()
+rule.build_tree()
 
-text_representation = tree.export_text(clf, feature_names=rule.feature_names)
+text_representation = tree.export_text(rule.clf, feature_names=rule.feature_names)
 print(text_representation)
 
-print('test 20.43, 71, 0', clf.predict([[20.43, 71, 0]]))
-print('test 22.43, 74, 0', clf.predict([[22.43, 74, 0]]))
-print('test 21.43, 74, 0', clf.predict([[21.43, 74, 0]]))
-print('test 21.43, 74, 1', clf.predict([[21.43, 74, 1]]))
+print('test 20.43, 71, 0', rule.clf.predict([[20.43, 71, 0]]))
+print('test 22.43, 74, 0', rule.clf.predict([[22.43, 74, 0]]))
+print('test 21.43, 74, 0', rule.clf.predict([[21.43, 74, 0]]))
+print('test 21.43, 74, 1', rule.clf.predict([[21.43, 74, 1]]))
 
 
 #python -c "from sklearn import tree; help(tree._tree.Tree)"

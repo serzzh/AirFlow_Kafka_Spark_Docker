@@ -89,4 +89,5 @@ class Rule:
                         setattr(clf.tree_, tree_attr, getattr(self.tree_, tree_attr))
             else:
                 setattr(clf, attr, getattr(self, attr))
+        self.clf = clf
         return clf
