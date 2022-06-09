@@ -1,8 +1,8 @@
 from sklearn import tree
 import numpy as np
-from dataclasses import dataclass
 from pydantic import BaseModel, conlist
 from typing import List, Any
+
 
 
 class PredictionQuery(BaseModel):
@@ -15,18 +15,17 @@ class PredictionResponse(BaseModel):
 
 class ModelResponse(BaseModel):
     model_id: int = 1
-    success: int
+    tree: Any
 
 
-
-@dataclass
-class Tree:
+class Tree(BaseModel):
     node_count: int
     children_left: List[int]
     children_right: List[int]
     feature: List[int]
     threshold: List[float]
     leaf_class_: List[int]
+    value: Any
 
     @staticmethod
     def from_dict(obj: Any) -> 'Tree':
@@ -38,24 +37,23 @@ class Tree:
         _leaf_class_ = [y for y in obj.get("leaf_class_")]
         return Tree(_node_count, _children_left, _children_right, _feature, _threshold, _leaf_class_)
 
-@dataclass
-class Model:
+class Model(BaseModel):
+    model_id: int
     n_features_in_: int
     feature_names: List[str]
     n_classes_: int
     classes_: List[int]
     node_count: int
     tree_: Tree
+    features: Any
+    target: Any
+    clf: Any
 
-    @staticmethod
-    def from_dict(obj: Any) -> 'Model':
-        _n_features_in_ = int(obj.get("n_features_in_"))
-        _feature_names = [y for y in obj.get("feature_names")]
-        _n_classes_ = int(obj.get("n_classes_"))
-        _classes_ = np.array([y for y in obj.get("classes_")])
-        _node_count = int(obj.get("node_count"))
-        _tree_ = Tree.from_dict(obj.get("tree_"))
-        return Model(_n_features_in_, _feature_names, _n_classes_, _classes_, _node_count, _tree_)
+    def __call__(self, q: str = ""):
+        if q:
+            return self.fixed_content in q
+        return False
+
 
     def dataset_generate(self):
         tree = self.tree_
@@ -104,4 +102,16 @@ class Model:
             else:
                 setattr(clf, attr, getattr(self, attr))
         self.clf = clf
-        return clf
+        self.classes_ = np.array(self.classes_)
+        text_representation = tree.export_text(clf, feature_names=self.feature_names)
+        return text_representation
+
+    @staticmethod
+    def from_dict(obj: Any) -> 'Model':
+        _n_features_in_ = int(obj.get("n_features_in_"))
+        _feature_names = [y for y in obj.get("feature_names")]
+        _n_classes_ = int(obj.get("n_classes_"))
+        _classes_ = np.array([y for y in obj.get("classes_")])
+        _node_count = int(obj.get("node_count"))
+        _tree_ = Tree.from_dict(obj.get("tree_"))
+        return Model(_n_features_in_, _feature_names, _n_classes_, _classes_, _node_count, _tree_)
