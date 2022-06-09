@@ -86,7 +86,7 @@ class Model(BaseModel):
         self.dataset_generate()
         clf = tree.DecisionTreeClassifier()
         clf = clf.fit(self.features , self.target)
-        joblib.dump(clf, 'clf.joblib')
+        #joblib.dump(clf, 'clf.joblib')
         # Set parameters manually
         rule_attributes = [x for x in dir(self) if not x.startswith('_')]
         tree_attributes = [x for x in dir(self.tree_) if not x.startswith('_')]
@@ -104,7 +104,6 @@ class Model(BaseModel):
             else:
                 setattr(clf, attr, getattr(self, attr))
 
-        #joblib.dump(clf, 'clf1.joblib')
         self.clf = clf
         self.classes_ = np.array(self.classes_)
         text_representation = tree.export_text(clf, feature_names=self.feature_names)

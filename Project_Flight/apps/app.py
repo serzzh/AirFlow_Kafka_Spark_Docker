@@ -17,6 +17,7 @@ app = FastAPI(title="Рекомендации по дереву решений",
 
 async def load_model(model: Model):
     text_representation = model.build_tree()
+    #joblib.dump(clf, 'clf1.joblib')
     return {"tree": text_representation}
 
 @app.post('/model/predict/{model_id}',
