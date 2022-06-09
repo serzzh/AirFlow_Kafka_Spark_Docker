@@ -2,9 +2,6 @@ from sklearn import tree
 import numpy as np
 from pydantic import BaseModel, conlist
 from typing import List, Any
-import joblib
-
-
 
 class PredictionQuery(BaseModel):
     model_id: int = 1
@@ -86,10 +83,11 @@ class Model(BaseModel):
         self.dataset_generate()
         clf = tree.DecisionTreeClassifier()
         clf = clf.fit(self.features , self.target)
-        #joblib.dump(clf, 'clf.joblib')
+        clf_attr = dir(clf).copy()
         # Set parameters manually
         rule_attributes = [x for x in dir(self) if not x.startswith('_')]
         tree_attributes = [x for x in dir(self.tree_) if not x.startswith('_')]
+        self.classes_ = np.array(self.classes_)
 
         for attr in rule_attributes:
             if isinstance(getattr(self, attr), Tree):
@@ -104,8 +102,9 @@ class Model(BaseModel):
             else:
                 setattr(clf, attr, getattr(self, attr))
 
+        del_attr = list(set(dir(clf))-set(clf_attr))
+        [delattr(clf, x) for x in del_attr]
         self.clf = clf
-        self.classes_ = np.array(self.classes_)
         text_representation = tree.export_text(clf, feature_names=self.feature_names)
         return text_representation
 
