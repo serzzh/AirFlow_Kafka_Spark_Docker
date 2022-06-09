@@ -1,6 +1,7 @@
 import json
-from Project_Flight.apps.models.bintree import Model
+from model import Rule
 from sklearn import tree
+import joblib
 
 jsonstring = json.loads('''
 {
@@ -20,8 +21,9 @@ jsonstring = json.loads('''
 }
 ''')
 
-rule = Model.from_dict(jsonstring)
+rule = Rule.from_dict(jsonstring)
 rule.build_tree()
+joblib.dump(rule.clf, 'clf.joblib')
 
 text_representation = tree.export_text(rule.clf, feature_names=rule.feature_names)
 print(text_representation)
