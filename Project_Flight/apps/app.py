@@ -1,5 +1,5 @@
 from fastapi import Depends, FastAPI, APIRouter, HTTPException, File
-from models.bintree import PredictionQuery, PredictionResponse, Model, ModelResponse
+from models.DecisionTreeClassifier import PredictionQuery, PredictionResponse, Model, ModelResponse
 import joblib
 
 app = FastAPI(title="Рекомендации по дереву решений", description="Рекомендации по дереву решений", version="1.0")
@@ -11,7 +11,7 @@ app = FastAPI(title="Рекомендации по дереву решений",
 
 async def load_model(model: Model):
     text_representation = model.build_tree()
-    joblib.dump(model.clf, 'clf.joblib')
+    joblib.dump(model.clf, 'db/model'+str(model.model_id)+'.joblib')
     return {"tree": text_representation}
 
 @app.post('/model/predict/{model_id}',
@@ -20,9 +20,8 @@ async def load_model(model: Model):
           description="Получить рекомендацию")
 
 async def get_prediction(query: PredictionQuery):
-    data = dict(query)['data']
-    clf = joblib.load('clf.joblib')
-    prediction = clf.predict(data)
+    clf = joblib.load('db/model'+str(dict(query)['model_id'])+'.joblib')
+    prediction = clf.predict(dict(query)['data'])
     return {"prediction": prediction}
 
 

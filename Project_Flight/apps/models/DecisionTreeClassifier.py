@@ -85,7 +85,7 @@ class Model(BaseModel):
         clf = clf.fit(self.features , self.target)
         clf_attr = dir(clf).copy()
         # Set parameters manually
-        rule_attributes = [x for x in dir(self) if not x.startswith('_')]
+        rule_attributes = [x for x in dir(self) if not x.startswith('_') and x in clf_attr]
         tree_attributes = [x for x in dir(self.tree_) if not x.startswith('_')]
         self.classes_ = np.array(self.classes_)
 
@@ -102,8 +102,6 @@ class Model(BaseModel):
             else:
                 setattr(clf, attr, getattr(self, attr))
 
-        del_attr = list(set(dir(clf))-set(clf_attr))
-        [delattr(clf, x) for x in del_attr]
         self.clf = clf
         text_representation = tree.export_text(clf, feature_names=self.feature_names)
         return text_representation
