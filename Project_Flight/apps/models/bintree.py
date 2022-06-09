@@ -1,8 +1,22 @@
 from sklearn import tree
 import numpy as np
-from typing import List
-from typing import Any
 from dataclasses import dataclass
+from pydantic import BaseModel, conlist
+from typing import List, Any
+
+
+class PredictionQuery(BaseModel):
+    model_id: int = 1
+    data: List[conlist(float, min_items=3, max_items=3)]
+
+class PredictionResponse(BaseModel):
+    model_id: int = 1
+    prediction: int
+
+class ModelResponse(BaseModel):
+    model_id: int = 1
+    success: int
+
 
 
 @dataclass
@@ -25,7 +39,7 @@ class Tree:
         return Tree(_node_count, _children_left, _children_right, _feature, _threshold, _leaf_class_)
 
 @dataclass
-class Rule:
+class Model:
     n_features_in_: int
     feature_names: List[str]
     n_classes_: int
@@ -34,14 +48,14 @@ class Rule:
     tree_: Tree
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Rule':
+    def from_dict(obj: Any) -> 'Model':
         _n_features_in_ = int(obj.get("n_features_in_"))
         _feature_names = [y for y in obj.get("feature_names")]
         _n_classes_ = int(obj.get("n_classes_"))
         _classes_ = np.array([y for y in obj.get("classes_")])
         _node_count = int(obj.get("node_count"))
         _tree_ = Tree.from_dict(obj.get("tree_"))
-        return Rule(_n_features_in_, _feature_names, _n_classes_, _classes_, _node_count, _tree_)
+        return Model(_n_features_in_, _feature_names, _n_classes_, _classes_, _node_count, _tree_)
 
     def dataset_generate(self):
         tree = self.tree_

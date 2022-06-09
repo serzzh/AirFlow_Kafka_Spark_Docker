@@ -1,5 +1,5 @@
 import json
-from model import Rule
+from Project_Flight.apps.models.bintree import Model
 from sklearn import tree
 
 jsonstring = json.loads('''
@@ -20,7 +20,7 @@ jsonstring = json.loads('''
 }
 ''')
 
-rule = Rule.from_dict(jsonstring)
+rule = Model.from_dict(jsonstring)
 rule.build_tree()
 
 text_representation = tree.export_text(rule.clf, feature_names=rule.feature_names)

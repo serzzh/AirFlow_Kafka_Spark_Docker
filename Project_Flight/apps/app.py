@@ -1,10 +1,5 @@
-#import models.ml.classifier as clf
 from fastapi import FastAPI
-from joblib import load
-from routes.v1.iris_predict import app_iris_predict_v1
-from routes.home import app_home
-from models.schemas.iris import Iris, IrisPredictionResponse
-from bintree.model import Rule
+from models.bintree import PredictionQuery, PredictionResponse, Model, ModelResponse
 import json
 
 jsonstring = json.loads('''
@@ -24,24 +19,30 @@ jsonstring = json.loads('''
         }
     }
     ''')
-rule = Rule.from_dict(jsonstring)
-clf = rule.build_tree()
+model = Model.from_dict(jsonstring)
+model.build_tree()
 
-app = FastAPI(title="Iris ML API", description="API for iris dataset ml model", version="1.0")
+app = FastAPI(title="Рекомендации по дереву решений", description="Рекомендации по дереву решений", version="1.0")
 
-@app.on_event('startup')
-async def load_model():
-    pass
-    #clf.model = load('models/ml/iris_dt_v1.joblib')
 
-@app.post('/rule/predict',
+@app.post('/model/predict',
           tags=["Predictions"],
-          response_model=IrisPredictionResponse,
+          response_model=PredictionResponse,
           description="Получить рекомендацию")
 
-async def get_prediction(iris: Iris):
-    data = dict(iris)['data']
-    prediction = clf.predict(data)
+async def get_prediction(query: PredictionQuery):
+    data = dict(query)['data']
+    prediction = model.clf.predict(data)
+    return {"prediction": prediction}
+
+@app.post('/model/load',
+          tags=["Load Model"],
+          response_model=ModelResponse,
+          description="Загрузить правило")
+
+async def get_prediction(query: PredictionQuery):
+    data = dict(query)['data']
+    prediction = model.clf.predict(data)
     return {"prediction": prediction}
 
 #app.include_router(app_home)
