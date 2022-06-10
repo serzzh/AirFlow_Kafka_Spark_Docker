@@ -1,4 +1,4 @@
-from fastapi import Depends, FastAPI, APIRouter, HTTPException, File
+from fastapi import FastAPI
 from models.DecisionTreeClassifier import PredictionQuery, PredictionResponse, Model, ModelResponse
 import joblib
 
@@ -23,8 +23,3 @@ async def get_prediction(query: PredictionQuery):
     clf = joblib.load('db/model'+str(dict(query)['model_id'])+'.joblib')
     prediction = clf.predict(dict(query)['data'])
     return {"prediction": prediction}
-
-
-
-#app.include_router(app_home)
-#app.include_router(app_iris_predict_v1, prefix='/v1')
