@@ -4,7 +4,6 @@ from pydantic import BaseModel, conlist
 from typing import List, Any
 
 class PredictionQuery(BaseModel):
-    model_id: int = 1
     data: List[conlist(float, min_items=3, max_items=3)]
 
 class PredictionResponse(BaseModel):

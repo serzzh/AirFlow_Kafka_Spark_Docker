@@ -14,12 +14,12 @@ async def load_model(model: Model):
     joblib.dump(model.clf, 'db/model'+str(model.model_id)+'.joblib')
     return {"tree": text_representation}
 
-@app.post('/model/predict/{model_id}',
+@app.post("/model/predict/{model_id}",
           tags=["Predictions"],
           response_model=PredictionResponse,
           description="Получить рекомендацию")
 
-async def get_prediction(query: PredictionQuery):
-    clf = joblib.load('db/model'+str(dict(query)['model_id'])+'.joblib')
+async def get_prediction(model_id: int, query: PredictionQuery):
+    clf = joblib.load('db/model'+str(model_id)+'.joblib')
     prediction = clf.predict(dict(query)['data'])
     return {"prediction": prediction}
