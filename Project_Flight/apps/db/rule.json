@@ -1,5 +1,5 @@
 {
-  "model_id": 1,
+  "model_id": 3,
   "n_features_in_": 3,
   "feature_names": ["Cu50", "pulp_level", "bulb_torn"],
   "n_classes_": 11,
