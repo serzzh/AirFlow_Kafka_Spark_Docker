@@ -266,7 +266,7 @@ services:
         container_name: modelapp_container
         ports:
             - "5050:5000"
-            - "81:80"
+            - "8008:80"
         volumes:
            - ./apps:/app
 

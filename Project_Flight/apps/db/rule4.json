@@ -1,0 +1,132 @@
+{
+    "model_id": 4,
+    "n_features_in_": 3,
+    "feature_names": [
+        "fm50_Cu",
+        "fm50_pulp_level",
+        "fm50_bubble"
+    ],
+    "n_classes_": 3,
+    "classes_": [
+        31,
+        41,
+        21
+    ],
+    "node_count": 9,
+    "tree_": [
+        {
+            "operator_id": 0,
+            "operator_type": "condition",
+            "parent_id": null,
+            "feature_id": 0,
+            "threshold_left": 19.5,
+            "threshold_right": 20.5,
+            "children_id": [
+                1
+            ],
+            "leaf_class_": null,
+            "delay_sec": null
+        },
+        {
+            "operator_id": 1,
+            "operator_type": "delay",
+            "parent_id": 0,
+            "feature_id": null,
+            "threshold_left": -Infinity,
+            "threshold_right": Infinity,
+            "children_id": [
+                2,
+                3
+            ],
+            "leaf_class_": null,
+            "delay_sec": 3600.0
+        },
+        {
+            "operator_id": 2,
+            "operator_type": "condition",
+            "parent_id": 1,
+            "feature_id": 1,
+            "threshold_left": -Infinity,
+            "threshold_right": 72.0,
+            "children_id": [
+                4
+            ],
+            "leaf_class_": null,
+            "delay_sec": null
+        },
+        {
+            "operator_id": 3,
+            "operator_type": "condition",
+            "parent_id": 1,
+            "feature_id": 1,
+            "threshold_left": 72.0,
+            "threshold_right": Infinity,
+            "children_id": [
+                5,
+                6
+            ],
+            "leaf_class_": null,
+            "delay_sec": null
+        },
+        {
+            "operator_id": 4,
+            "operator_type": "recommendation",
+            "parent_id": 2,
+            "feature_id": null,
+            "threshold_left": -Infinity,
+            "threshold_right": Infinity,
+            "children_id": null,
+            "leaf_class_": 3,
+            "delay_sec": null
+        },
+        {
+            "operator_id": 5,
+            "operator_type": "condition",
+            "parent_id": 3,
+            "feature_id": 2,
+            "threshold_left": -Infinity,
+            "threshold_right": 0.5,
+            "children_id": [
+                7
+            ],
+            "leaf_class_": null,
+            "delay_sec": null
+        },
+        {
+            "operator_id": 6,
+            "operator_type": "condition",
+            "parent_id": 3,
+            "feature_id": 2,
+            "threshold_left": 0.5,
+            "threshold_right": Infinity,
+            "children_id": [
+                8
+            ],
+            "leaf_class_": null,
+            "delay_sec": null
+        },
+        {
+            "operator_id": 7,
+            "operator_type": "recommendation",
+            "parent_id": 5,
+            "feature_id": null,
+            "threshold_left": -Infinity,
+            "threshold_right": Infinity,
+            "children_id": null,
+            "leaf_class_": 41,
+            "delay_sec": null
+        },
+        {
+            "operator_id": 8,
+            "operator_type": "recommendation",
+            "parent_id": 6,
+            "feature_id": null,
+            "threshold_left": -Infinity,
+            "threshold_right": Infinity,
+            "children_id": null,
+            "leaf_class_": 21,
+            "delay_sec": null
+        }
+    ],
+    "current_node": null
+}
