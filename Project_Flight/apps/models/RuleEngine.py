@@ -1,6 +1,24 @@
 from pydantic import BaseModel, conlist
 from typing import List, Literal, Union, Any
 import math
+from uuid import UUID
+
+
+class PredictionQuery(BaseModel):
+    data: List[conlist(float, min_items=1, max_items=999)]
+
+class ModelCheckResponse(BaseModel):
+    model_id: UUID
+    result: bool
+    n_features_in_: int
+    error_message: str
+
+class PredictionResponse(BaseModel):
+    model_id: UUID
+    prediction: UUID
+    error_message: str
+
+
 
 class RuleChainResponse(BaseModel):
     model_id: int
@@ -15,15 +33,15 @@ class Operator(BaseModel):
     threshold_left: Union[float, None] #только для типа condition, если есть порог слева, иначе null (пусто)
     threshold_right: Union[float, None] #только для типа condition, если есть порог справа, threshold_right>threshold_left, иначе null (пусто)
     children_id: Union[List[int], None] #только если есть потомки, иначе null (пусто)
-    leaf_class_: Union[int, None] #только для типа recommendation, иначе null (пусто)
+    leaf_class_: Union[UUID, None] #только для типа recommendation, иначе null (пусто)
     delay_sec: Union[float, None] #только для типа delay, иначе null (пусто)
 
 class RuleChain(BaseModel):
-    model_id: int
+    model_id: UUID
     n_features_in_: int
     feature_names: List[str]
     n_classes_: int
-    classes_: List[int]
+    classes_: List[UUID]
     node_count: int
     tree_: List[Operator]
     current_node: Union[int, None] # внутренний параметр - на вход не подается
@@ -53,7 +71,7 @@ class RuleChain(BaseModel):
             self.current_node = self.get_children(self.current_node, features[0])
         for node in self.current_node:
             if self.tree_[node].operator_type == 'recommendation':
-                result.append(node)
+                result.append(self.tree_[node].leaf_class_)
         if len(result)>0:
             prediction = result[0]
         else:

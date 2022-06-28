@@ -1,5 +1,5 @@
 {
-    "model_id": 4,
+    "model_id": "cdfdcfa9-663b-45ab-8f57-786741f8bc1a",
     "n_features_in_": 3,
     "feature_names": [
         "fm50_Cu",
@@ -8,9 +8,9 @@
     ],
     "n_classes_": 3,
     "classes_": [
-        31,
-        41,
-        21
+        "8fc13746-8008-4fde-8a6b-342a7bcd7373",
+        "bdbbd904-1a40-42ba-9ae3-a2e62ad69052",
+        "60f87dd7-cc80-4e94-9f03-1c97d5e515ce"
     ],
     "node_count": 9,
     "tree_": [
@@ -76,7 +76,7 @@
             "threshold_left": -Infinity,
             "threshold_right": Infinity,
             "children_id": null,
-            "leaf_class_": 3,
+            "leaf_class_": "8fc13746-8008-4fde-8a6b-342a7bcd7373",
             "delay_sec": null
         },
         {
@@ -113,7 +113,7 @@
             "threshold_left": -Infinity,
             "threshold_right": Infinity,
             "children_id": null,
-            "leaf_class_": 41,
+            "leaf_class_": "bdbbd904-1a40-42ba-9ae3-a2e62ad69052",
             "delay_sec": null
         },
         {
@@ -124,7 +124,7 @@
             "threshold_left": -Infinity,
             "threshold_right": Infinity,
             "children_id": null,
-            "leaf_class_": 21,
+            "leaf_class_": "60f87dd7-cc80-4e94-9f03-1c97d5e515ce",
             "delay_sec": null
         }
     ],

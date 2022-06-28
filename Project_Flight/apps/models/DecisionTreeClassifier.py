@@ -3,25 +3,6 @@ import numpy as np
 from pydantic import BaseModel, conlist
 from typing import List, Any
 
-class PredictionQuery(BaseModel):
-    data: List[conlist(float, min_items=1, max_items=999)]
-
-class PredictionResponse(BaseModel):
-    model_id: int
-    prediction: int
-    error_message: str
-
-class ModelCheckResponse(BaseModel):
-    model_id: int
-    result: bool
-    n_features_in_: int
-    error_message: str
-
-class PredictionResponse(BaseModel):
-    model_id: int
-    prediction: int
-    error_message: str
-
 class ModelResponse(BaseModel):
     model_id: int
     tree: Any
